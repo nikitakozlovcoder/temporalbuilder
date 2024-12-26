@@ -2,27 +2,21 @@
 
 namespace TemporalBuilder.Builder.Controller;
 
-public class SignalControllerBuilder<T>(IWorkflowControllerSettableStatus<T> workflowController) : ISignalControllerIfBuilder<T> where T : Enum
+public class SignalControllerBuilder<T>(IWorkflowControllerSettableStatus<T> workflowController)
+    : ISignalControllerHandleBuilder<T> where T : Enum
 {
-    public ISignalControllerIfBuilder<T> Handle(Func<T> handler)
+    public void Handle(Func<T> handler)
     {
-        var controller = new SignalController<T>
+        var signalController = new SignalController<T>
         {
-            SignalBuilder = this,
             WorkflowController = workflowController
         };
-        
-        controller.Handle(handler);
-        return this;
+
+        signalController.Handle(handler);
     }
 
-    public ISignalControllerHandle<T> If(Func<bool> condition)
+    public SignalControllerIfHandlerBuilder<T> If(Func<bool> condition)
     {
-        return new SignalController<T>
-        {
-            SignalBuilder = this,
-            Condition = condition,
-            WorkflowController = workflowController
-        };
+        return new SignalControllerIfHandlerBuilder<T>(condition, workflowController);
     }
 }

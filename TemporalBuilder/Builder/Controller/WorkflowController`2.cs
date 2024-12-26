@@ -11,7 +11,7 @@ public class WorkflowController<T, TComplete>(
     T initialStatus) : IWorkflowControllerSettableStatus<T>, IWorkflowController<T, TComplete> where T : Enum
 {
     public T Status { get; set; } = initialStatus;
-    public ISignalControllerIfBuilder<T> Signal => new SignalControllerBuilder<T>(this);
+    public SignalControllerBuilder<T> Signal => new(this);
 
     public async Task<TComplete> RunAsync()
     {
