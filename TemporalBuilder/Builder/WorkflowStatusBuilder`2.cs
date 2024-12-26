@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using TemporalBuilder.Builder.Contracts.WithCompleteValue;
 using TemporalBuilder.Builder.Controller;
-using TemporalBuilder.Builder.Controller.Contracts;
 using TemporalBuilder.Builder.Controller.Contracts.WithCompleteValue;
 
 namespace TemporalBuilder.Builder;
@@ -10,20 +9,21 @@ public class WorkflowStatusBuilder<T, TComplete>(T initialStatus) : IInBuilder<T
 {
     private readonly Dictionary<T, List<WorkflowHandler<T, TComplete>>> _handlers = new();
 
-    public IIfBuilder<T, TComplete> In(T status)
+    public void AddHandler(T status, WorkflowHandler<T, TComplete> handler)
     {
-        var handler = new WorkflowHandler<T, TComplete>(status, this);
-        var containsKey = _handlers.ContainsKey(status);
-        if (containsKey)
+        var exists = _handlers.ContainsKey(status);
+        if (exists)
         {
             _handlers[status].Add(handler);
+            return;
         }
-        else
-        {
-            _handlers.Add(status, [handler]);
-        }
+        
+        _handlers.Add(status, [handler]);
+    }
 
-        return handler;
+    public IHandleOrIfBuilder<T, TComplete> In(T status)
+    {
+        return new InBuilder<T, TComplete>(status, this);
     }
 
     public IWorkflowController<T, TComplete> Build()
