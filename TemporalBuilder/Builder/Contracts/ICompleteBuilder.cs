@@ -1,6 +1,4 @@
-﻿using TemporalBuilder.Builder.Contracts.WithCompleteValue;
-
-namespace TemporalBuilder.Builder.Contracts;
+﻿namespace TemporalBuilder.Builder.Contracts;
 
 public interface ICompleteBuilder
 {

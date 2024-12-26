@@ -1,7 +1,7 @@
-﻿
+﻿using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts;
 using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
 
-namespace TemporalBuilder.Builder.Contracts.WithCompleteValue;
+namespace TemporalBuilder.Builder.Contracts;
 
 public interface IHandleBuilder<T, TComplete> where T : Enum
 {

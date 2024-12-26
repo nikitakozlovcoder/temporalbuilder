@@ -1,4 +1,4 @@
-﻿namespace TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
+﻿namespace TemporalBuilder.Builder.WorkflowHandlerContext.Contracts;
 
 public interface IWorkflowHandlerContext<T, TComplete> where T : Enum
 {

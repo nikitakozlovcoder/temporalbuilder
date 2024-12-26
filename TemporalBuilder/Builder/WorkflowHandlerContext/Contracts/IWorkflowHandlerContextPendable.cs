@@ -1,4 +1,6 @@
-﻿namespace TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
+﻿using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
+
+namespace TemporalBuilder.Builder.WorkflowHandlerContext.Contracts;
 
 public interface IWorkflowHandlerContextPendable<T, TComplete> : 
     IWorkflowHandlerContext<T, TComplete>,

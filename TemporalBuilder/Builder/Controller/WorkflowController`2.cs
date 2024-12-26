@@ -1,6 +1,5 @@
 using System.Collections.Immutable;
 using TemporalBuilder.Builder.Controller.Contracts;
-using TemporalBuilder.Builder.Controller.Contracts.WithCompleteValue;
 using TemporalBuilder.Builder.WorkflowHandlerContext;
 using Temporalio.Workflows;
 

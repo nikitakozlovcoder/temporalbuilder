@@ -1,6 +1,6 @@
-﻿using TemporalBuilder.Builder.Controller.Contracts.WithCompleteValue;
+﻿using TemporalBuilder.Builder.Controller.Contracts;
 
-namespace TemporalBuilder.Builder.Contracts.WithCompleteValue;
+namespace TemporalBuilder.Builder.Contracts;
 
 public interface IInBuilder<T, TComplete> where T : Enum
 {

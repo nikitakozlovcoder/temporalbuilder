@@ -1,4 +1,4 @@
-﻿namespace TemporalBuilder.Builder.Contracts.WithCompleteValue;
+﻿namespace TemporalBuilder.Builder.Contracts;
 
 public interface IIfBuilder<T, TComplete> where T : Enum
 {

@@ -1,5 +1,4 @@
 ﻿using TemporalBuilder.Builder.Contracts;
-using TemporalBuilder.Builder.Contracts.WithCompleteValue;
 
 namespace TemporalBuilder.Builder;
 

@@ -1,4 +1,5 @@
-﻿using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
+﻿using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts;
+using TemporalBuilder.Builder.WorkflowHandlerContext.Contracts.WithCompleteValue;
 
 namespace TemporalBuilder.Builder.WorkflowHandlerContext;
 

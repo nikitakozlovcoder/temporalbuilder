@@ -1,7 +1,7 @@
 ﻿using System.Collections.Immutable;
-using TemporalBuilder.Builder.Contracts.WithCompleteValue;
+using TemporalBuilder.Builder.Contracts;
 using TemporalBuilder.Builder.Controller;
-using TemporalBuilder.Builder.Controller.Contracts.WithCompleteValue;
+using TemporalBuilder.Builder.Controller.Contracts;
 
 namespace TemporalBuilder.Builder;
 

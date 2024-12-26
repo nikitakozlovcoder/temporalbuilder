@@ -1,5 +1,5 @@
 ﻿using TemporalBuilder.Builder;
-using TemporalBuilder.Builder.Controller.Contracts.WithCompleteValue;
+using TemporalBuilder.Builder.Controller.Contracts;
 using Temporalio.Workflows;
 
 namespace TemporalBuilder.Workflows;
